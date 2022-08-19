@@ -1,0 +1,8 @@
+.elements__like_active {
+    background-image: url(../../../../image/Union.svg);
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+}

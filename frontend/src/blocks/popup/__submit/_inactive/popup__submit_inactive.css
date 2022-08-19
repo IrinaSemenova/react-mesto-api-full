@@ -1,0 +1,9 @@
+.popup__submit_inactive{
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 2px;
+    color: #E5E5E5;
+    border: 1px solid #E5E5E5;
+    cursor: default;
+    
+}

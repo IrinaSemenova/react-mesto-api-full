@@ -1,0 +1,16 @@
+.register__signin-link{
+    text-decoration: none;
+    margin-top: 15px;
+    transition: 0.8s ease;
+    cursor: pointer;
+    display: block;
+    padding: 0;
+    margin: 15px 0 0;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.register__signin-link:hover {
+    opacity: 0.6;
+  }
+  

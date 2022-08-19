@@ -1,0 +1,19 @@
+.elements {
+    max-width: 880px;
+    margin: 0 auto 69px;
+    padding: 0;
+    min-height: 59vh;
+}
+
+@media (max-width: 918px) {
+    .elements {
+        margin: 0 19px 48px;
+    }
+
+}
+
+@media (max-width: 320px) {
+    .elements {
+        max-width: 282px;
+    }
+}

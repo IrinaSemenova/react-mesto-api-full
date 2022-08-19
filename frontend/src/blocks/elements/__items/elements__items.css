@@ -1,0 +1,9 @@
+.elements__items {
+    max-width: 282px;
+    max-height: 361px;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    border-radius: 10px;
+    position: relative;
+}

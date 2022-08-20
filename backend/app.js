@@ -8,6 +8,7 @@ const routerUsers = require('./routes/users');
 const routerCards = require('./routes/cards');
 const { createUser, login } = require('./controllers/users');
 const auth = require('./middlewares/auth');
+const cors = require('./middlewares/cors');
 const NotFoundError = require('./error/not-found-error');
 const { linkValidate } = require('./utils/link-validate');
 
@@ -19,6 +20,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.json());
+app.use(cors);
 app.use(requestLogger); // подключаем логгер запросов
 
 app.post('/signin', celebrate({

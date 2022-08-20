@@ -1,7 +1,7 @@
 class Api {
     constructor(options) {
         this._url =  options.url;
-        this._headers = options.headers; 
+        this._headers = options.headers;
     }
 
     _response(res) {
@@ -20,8 +20,8 @@ class Api {
       }
 
       getInitialCards() {
-        return fetch(`${this._url}/cards`, { 
-          headers: this._headers 
+        return fetch(`${this._url}/cards`, {
+          headers: this._headers
         })
         .then(this._response);
       }
@@ -40,7 +40,7 @@ class Api {
 
       addNewCard(name, link){
         return fetch(`${this._url}/cards`, {
-          method: 'POST', 
+          method: 'POST',
           headers: this._headers,
           body: JSON.stringify({
             name: name,
@@ -68,7 +68,7 @@ class Api {
 
       removeLike(cardId){
         return fetch(`${this._url}/cards/${cardId}/likes`, {
-          method: 'DELETE', 
+          method: 'DELETE',
           headers: this._headers,
         })
         .then(this._response);
@@ -84,7 +84,7 @@ class Api {
 
       editUserAvatar(avatar){
         return fetch(`${this._url}/users/me/avatar`, {
-          method: 'PATCH', 
+          method: 'PATCH',
           headers: this._headers,
           body: JSON.stringify({
             avatar: avatar
@@ -96,9 +96,8 @@ class Api {
 
 //create Api
 const api = new Api({
-  url: 'https://mesto.nomoreparties.co/v1/cohort-41',
+  url: 'http://api.domainbackmesto.students.nomoredomains.sbs',
   headers: {
-    authorization: 'f5901c24-63b3-4521-95a0-b92550e35de4',
     'Content-type': 'application/json'
   }
 });

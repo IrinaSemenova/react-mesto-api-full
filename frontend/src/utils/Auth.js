@@ -1,4 +1,4 @@
-export const BASE_URL = "https://auth.nomoreparties.co";
+export const BASE_URL = "http://api.domainbackmesto.students.nomoredomains.sbs";
 
 const response = (res) => {
     if (res.ok) {
@@ -25,7 +25,7 @@ export const register = (email, password) => {
     return fetch(`${BASE_URL}/signin`, {
       method: "POST",
       headers,
-      body: JSON.stringify({ 
+      body: JSON.stringify({
         "email": email,
         "password": password
       }),

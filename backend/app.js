@@ -23,11 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.json());
 const options = {
   origin: [
-    'http://domainfrontmesto.students.nomoredomains.sbs',
     'https://domainfrontmesto.students.nomoredomains.sbs',
-    'http://localhost:3000',
-    'http://localhost:3001',
-    'https://localhost:3000',
   ],
   credentials: true,
   optionsSuccessStatus: 200,

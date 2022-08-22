@@ -107,7 +107,7 @@ class Api {
 
 //create Api
 const api = new Api({
-  url: 'https://domainfrontmesto.students.nomoredomains.sbs',
+  url: 'https://domainbackmesto.students.nomoredomains.sbs',
   headers: {
     'Content-type': 'application/json'
   }

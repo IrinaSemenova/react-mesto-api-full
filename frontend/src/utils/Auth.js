@@ -1,4 +1,4 @@
-export const BASE_URL = "https://domainfrontmesto.students.nomoredomains.sbs";
+export const BASE_URL = "https://domainbackmesto.students.nomoredomains.sbs";
 
 const response = (res) => {
     if (res.ok) {

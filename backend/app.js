@@ -24,6 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const options = {
   origin: [
     'https://domainfrontmesto.students.nomoredomains.sbs',
+    'http://domainfrontmesto.students.nomoredomains.sbs',
   ],
   credentials: true,
   optionsSuccessStatus: 200,

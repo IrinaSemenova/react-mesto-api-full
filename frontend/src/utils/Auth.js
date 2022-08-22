@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:3000";
+export const BASE_URL = "https://domainfrontmesto.students.nomoredomains.sbs";
 
 const response = (res) => {
     if (res.ok) {

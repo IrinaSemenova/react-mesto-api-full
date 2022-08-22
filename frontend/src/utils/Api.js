@@ -14,14 +14,18 @@ class Api {
 
       getUserInfo(){
         return fetch(`${this._url}/users/me`, {
-          headers: this._headers
+          method: 'GET',
+          headers: this._headers,
+          credentials: 'include',
         })
         .then(this._response);
       }
 
       getInitialCards() {
         return fetch(`${this._url}/cards`, {
-          headers: this._headers
+          method: 'GET',
+          headers: this._headers,
+          credentials: 'include',
         })
         .then(this._response);
       }
@@ -30,6 +34,7 @@ class Api {
         return fetch(`${this._url}/users/me`, {
           method: 'PATCH',
           headers: this._headers,
+          credentials: 'include',
           body: JSON.stringify({
             name: name,
             about: about
@@ -42,6 +47,7 @@ class Api {
         return fetch(`${this._url}/cards`, {
           method: 'POST',
           headers: this._headers,
+          credentials: 'include',
           body: JSON.stringify({
             name: name,
             link: link
@@ -54,6 +60,7 @@ class Api {
         return fetch(`${this._url}/cards/${cardId}`, {
           method: 'DELETE',
           headers: this._headers,
+          credentials: 'include',
         })
         .then(this._response);
       }
@@ -62,6 +69,7 @@ class Api {
         return fetch(`${this._url}/cards/${cardId}/likes`,{
           method: 'PUT',
           headers: this._headers,
+          credentials: 'include',
         })
         .then(this._response);
       }
@@ -70,6 +78,7 @@ class Api {
         return fetch(`${this._url}/cards/${cardId}/likes`, {
           method: 'DELETE',
           headers: this._headers,
+          credentials: 'include',
         })
         .then(this._response);
       }
@@ -78,6 +87,7 @@ class Api {
         return fetch(`${this._url}/cards/${cardId}/likes`, {
           method: like ? 'PUT' : 'DELETE',
           headers: this._headers,
+          credentials: 'include',
         })
         .then(this._response);
       }
@@ -86,6 +96,7 @@ class Api {
         return fetch(`${this._url}/users/me/avatar`, {
           method: 'PATCH',
           headers: this._headers,
+          credentials: 'include',
           body: JSON.stringify({
             avatar: avatar
           })
@@ -96,7 +107,7 @@ class Api {
 
 //create Api
 const api = new Api({
-  url: 'http://api.domainbackmesto.students.nomoredomains.sbs',
+  url: 'http://localhost:3000',
   headers: {
     'Content-type': 'application/json'
   }

@@ -8,17 +8,17 @@ function Register ({onRegister}) {
     function handleChangeEmail(e) {
         setEmail(e.target.value);
       }
-    
+
     function handleChangePassword(e) {
         setPassword(e.target.value);
       }
-    
+
     function handleSubmit(e) {
         e.preventDefault();
         onRegister(email, password);
         resetRegForm();
       }
-    
+
     function resetRegForm(){
         setEmail('');
         setPassword('')
@@ -36,13 +36,13 @@ function Register ({onRegister}) {
                     <button className="register__submit" type="submit" id="register__submit">Зарегистрироваться</button>
                 </form>
             </div>
-        
+
             <div className="register__signin">
                 <p className="register__text">Уже зарегистрированы?</p>
-                <Link to="/sign-in" className="register__signin-link">Войти</Link>
+                <Link to="/signin" className="register__signin-link">Войти</Link>
             </div>
         </div>
-          
+
     )
 }
 

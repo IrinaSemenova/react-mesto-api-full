@@ -8,16 +8,16 @@ function Header ({emailUser, onSignOut}) {
         <header className="header">
 	        <img className="header__logo" src={logo} alt="Место"/>
             <Switch>
-                <Route path="/sign-in">
-                    <Link className="header__link" to="/sign-up">Регистрация</Link>
+                <Route path="/signin">
+                    <Link className="header__link" to="/signup">Регистрация</Link>
                 </Route>
-                <Route path="/sign-up">
-                    <Link className="header__link" to="/sign-in">Войти</Link>
+                <Route path="/signup">
+                    <Link className="header__link" to="/signin">Войти</Link>
                 </Route>
                 <Route exact path="/">
                     <div className="header__container">
                         <p className="header__email">{emailUser}</p>
-                        <Link className="header__link-exit" to="/sign-in" onClick={onSignOut}>Выйти</Link>
+                        <Link className="header__link-exit" to="/signin" onClick={onSignOut}>Выйти</Link>
                     </div>
                 </Route>
             </Switch>

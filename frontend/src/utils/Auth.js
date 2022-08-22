@@ -1,4 +1,4 @@
-export const BASE_URL = "http://api.domainbackmesto.students.nomoredomains.sbs";
+export const BASE_URL = "http://localhost:3000";
 
 const response = (res) => {
     if (res.ok) {
@@ -17,6 +17,7 @@ export const register = (email, password) => {
     return fetch(`${BASE_URL}/signup`, {
       method: "POST",
       headers,
+      credentials: 'include',
       body: JSON.stringify({ email, password }),
     }).then(response);
   };
@@ -25,6 +26,7 @@ export const register = (email, password) => {
     return fetch(`${BASE_URL}/signin`, {
       method: "POST",
       headers,
+      credentials: 'include',
       body: JSON.stringify({
         "email": email,
         "password": password
@@ -40,6 +42,7 @@ export const register = (email, password) => {
        ...headers,
         Authorization: `Bearer ${token}`,
       },
+      credentials: 'include',
     })
       .then(response)
       .then(data => data)

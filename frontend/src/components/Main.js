@@ -34,7 +34,7 @@ function Main ({onEditProfile, onAddPlace, onEditAvatar, onCardClick, cards, onC
                 </ul>
             </section>
         </main>
-    )             
+    )
 }
 
 export default Main;

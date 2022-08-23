@@ -1,5 +1,5 @@
-export const BASE_URL = 'http://localhost:3000';
-// "https://api.domainbackmesto.students.nomoredomains.sbs";
+export const BASE_URL = ///'http://localhost:3000';
+"https://api.domainbackmesto.students.nomoredomains.sbs";
 
 const response = (res) => {
     if (res.ok) {

@@ -4,16 +4,17 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const { errors, celebrate, Joi } = require('celebrate');
+const { errors } = require('celebrate');
 const bodyParser = require('body-parser');
+const router = require('./routes');
 const serverError = require('./middlewares/serverError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const routerUsers = require('./routes/users');
+/*const routerUsers = require('./routes/users');
 const routerCards = require('./routes/cards');
 const { createUser, login } = require('./controllers/users');
-const auth = require('./middlewares/auth');
+const auth = require('./middlewares/auth');*/
 const NotFoundError = require('./error/not-found-error');
-const { linkValidate } = require('./utils/link-validate');
+/*const { linkValidate } = require('./utils/link-validate');*/
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -42,7 +43,7 @@ app.get('/crash-test', () => {
   }, 0);
 });
 
-app.post('/signin', celebrate({
+/*app.post('/signin', celebrate({
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     password: Joi.string().required(),
@@ -65,7 +66,9 @@ app.get('/signout', (req, res) => {
 
 app.use(auth);
 app.use(routerUsers);
-app.use(routerCards);
+app.use(routerCards);*/
+
+app.use(router);
 
 app.use('*', (req, res, next) => {
   next(new NotFoundError('Страница не найдена'));

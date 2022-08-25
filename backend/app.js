@@ -9,12 +9,7 @@ const bodyParser = require('body-parser');
 const router = require('./routes');
 const serverError = require('./middlewares/serverError');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-/*const routerUsers = require('./routes/users');
-const routerCards = require('./routes/cards');
-const { createUser, login } = require('./controllers/users');
-const auth = require('./middlewares/auth');*/
 const NotFoundError = require('./error/not-found-error');
-/*const { linkValidate } = require('./utils/link-validate');*/
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -27,8 +22,8 @@ const options = {
   origin: [
     'https://domainfrontmesto.students.nomoredomains.sbs',
     'http://domainfrontmesto.students.nomoredomains.sbs',
-    'https://localhost:3001',
-    'http://localhost:3001',
+    // 'https://localhost:3001',
+    // 'http://localhost:3001',
   ],
   credentials: true,
   optionsSuccessStatus: 200,
@@ -44,31 +39,6 @@ app.get('/crash-test', () => {
     throw new Error('Сервер сейчас упадёт');
   }, 0);
 });
-
-/*app.post('/signin', celebrate({
-  body: Joi.object().keys({
-    email: Joi.string().required().email(),
-    password: Joi.string().required(),
-  }),
-}), login);
-
-app.post('/signup', celebrate({
-  body: Joi.object().keys({
-    email: Joi.string().required().email(),
-    password: Joi.string().required(),
-    name: Joi.string().min(2).max(30),
-    about: Joi.string().min(2).max(30),
-    avatar: Joi.string().regex(linkValidate),
-  }),
-}), createUser);
-
-app.get('/signout', (req, res) => {
-  res.clearCookie('authorization').send({ message: 'Выход' });
-});
-
-app.use(auth);
-app.use(routerUsers);
-app.use(routerCards);*/
 
 app.use(router);
 

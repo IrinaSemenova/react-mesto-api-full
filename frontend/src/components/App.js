@@ -15,12 +15,14 @@ import Login from "./Login";
 import ProtectedRoute from "./ProtectedRoute";
 import InfoTooltip from "./InfoTooltip";
 import * as auth from "../utils/Auth";
+import MobileMenu from "./MobileMenu";
 
 function App({}) {
   const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = useState(false);
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [isDeletePopupOpen, setIsDeletePopupOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
   const [currentUser, setCurrentUser] = useState({});
@@ -31,6 +33,7 @@ function App({}) {
   const [emailUser, setEmailUser] = useState("");
   const [isRegisterOk, setIsRegistrOk] = useState(false);
   const history = useHistory();
+
 
 // create Error Api
   function errorApi(err){
@@ -131,6 +134,12 @@ function App({}) {
     setSelectedCard(card);
   }
 
+  function handleClickOpenMobileMenu() {
+    if (isLoggedIn) {
+      setIsMobileMenuOpen(!isMobileMenuOpen)
+    }
+  }
+
 // like card
   function handleCardLike(card) {
     // Снова проверяем, есть ли уже лайк на этой карточке
@@ -211,16 +220,25 @@ function App({}) {
     localStorage.removeItem("jwt");
     setLoggedIn(false);
     setEmailUser("");
+    setIsMobileMenuOpen(false);
     history.push("/signin");
   }
+
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
     <div className="root">
 	    <div className="page">
+        <MobileMenu
+          emailUser={emailUser}
+          onSignOut={handleSignOut}
+          isMobileMenuOpen={isMobileMenuOpen}
+        />
 	      <Header
           emailUser={emailUser}
           onSignOut={handleSignOut}
+          isMobileMenuOpen={isMobileMenuOpen}
+          handleClickOpenMobileMenu={handleClickOpenMobileMenu}
         />
         <Switch>
           <ProtectedRoute
@@ -242,7 +260,7 @@ function App({}) {
           </Route>
 
           <Route path="/signup">
-            <Register onRegister={handleRegister}/>
+            <Register onRegister={handleRegister} />
           </Route>
 
           <Route path="*">

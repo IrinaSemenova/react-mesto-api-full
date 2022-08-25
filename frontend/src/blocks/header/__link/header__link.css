@@ -12,3 +12,12 @@
 .header__link:hover{
     opacity: 0.6;
 }
+
+@media (max-width: 320px){
+  .header__link{
+    font-size: 14px;
+    line-height: 17px;
+    padding-right: 30px;
+
+  }
+}

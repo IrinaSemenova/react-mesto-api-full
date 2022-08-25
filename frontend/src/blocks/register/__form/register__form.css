@@ -2,3 +2,10 @@
     display: flex;
     flex-direction: column;
 }
+
+@media (max-width: 320px){
+  .register__form{
+    max-width: 260px;
+    margin: auto;
+  }
+}

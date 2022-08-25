@@ -21,3 +21,12 @@
 .login__submit:hover {
     opacity: 0.8;
 }
+@media (max-width: 320px){
+  .login__submit{
+    margin: 173px 0 0;
+    width: 260px;
+    height: 46px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+}

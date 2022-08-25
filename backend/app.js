@@ -27,8 +27,8 @@ const options = {
   origin: [
     'https://domainfrontmesto.students.nomoredomains.sbs',
     'http://domainfrontmesto.students.nomoredomains.sbs',
-    //'https://localhost:3001',
-    //'http://localhost:3001',
+    'https://localhost:3001',
+    'http://localhost:3001',
   ],
   credentials: true,
   optionsSuccessStatus: 200,

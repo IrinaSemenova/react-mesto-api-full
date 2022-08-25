@@ -1,3 +1,9 @@
 .header__container{
     display: flex;
 }
+
+@media (max-width: 420px) {
+  .header__container {
+    display: none;
+  }
+}

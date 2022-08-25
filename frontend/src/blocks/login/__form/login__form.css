@@ -3,7 +3,7 @@
     flex-direction: column;
 }
 
-@media (max-width: 320px){
+@media (max-width: 420px){
   .login__form{
     max-width: 260px;
     margin: auto;

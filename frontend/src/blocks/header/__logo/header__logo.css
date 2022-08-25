@@ -12,7 +12,7 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 899px) {
   .header__logo {
     padding-bottom: 0px;
   }

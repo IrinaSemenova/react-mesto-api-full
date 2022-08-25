@@ -16,7 +16,7 @@
 }
 
 
-@media (max-width: 320px) {
+@media (max-width: 900px) {
     .header {
         max-width: 100%;
         margin: 0 auto 42px;

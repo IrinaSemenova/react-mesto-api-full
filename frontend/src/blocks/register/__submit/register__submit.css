@@ -21,7 +21,7 @@
     opacity: 0.8;
 }
 
-@media (max-width: 320px){
+@media (max-width: 420px){
   .register__submit{
     margin: 173px 0 0;
     width: 260px;

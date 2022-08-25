@@ -2,6 +2,7 @@
     background-color: #000000;
     border: none;
     border-bottom: 2px solid #cccccc;
+    border-radius: 0;
     padding: 0 0 8px;
     outline: none;
     font-family: 'Inter';
